@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="grid grid-cols-4 h-screen">
-      <div className="">
+      <div className="p-3">
         <CategoryList />
       </div>
       <div className="col-span-3">
