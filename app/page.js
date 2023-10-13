@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import CategoryList from '../components/Home/CategoryList';
 import RangeSelect from '../components/Home/RangeSelect';
 import SelectRating from '../components/Home/SelectRating';
+import GoogleMapView from '../components/Home/GoogleMapView';
 
 export default function Home() {
   const {data:session} = useSession();
@@ -25,7 +26,7 @@ export default function Home() {
         <SelectRating />
       </div>
       <div className="col-span-3">
-        Second
+        <GoogleMapView />
       </div>
       <button onClick={() => signOut()}>Sign Out</button>
     </div>
