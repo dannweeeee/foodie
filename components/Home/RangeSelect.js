@@ -7,7 +7,7 @@ function RangeSelect({onRadiusChange}) {
         <h2 className="font-bold px-2">
             Select Radius (In Meter)
         </h2>
-        <input type='range' className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer' 
+        <input type='range' className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer text-center' 
             min="0" 
             max="100" 
             step="10"
@@ -15,7 +15,7 @@ function RangeSelect({onRadiusChange}) {
             defaultValue={radius}
         />
         <label className="text-gray-500 text-[15px]">
-            {radius*100} in Meters
+            {radius/10} KM
         </label>
     </div>
   )
