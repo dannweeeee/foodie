@@ -6,7 +6,7 @@ function BusinessItem({business}) {
     const photo_ref=business?.photos?business?.photos[0]?.photo_reference:''
 
     return (
-        <div className='w-[180px] flex-shrink-0 p-2 rounded-lg bg-white'>
+        <div className='w-[195px] flex-shrink-0 p-2 rounded-lg shadow-md mb-1 bg-white hover:scale-110 transition-all mt-[20px] cursor-pointer'>
             <Image src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_ref}&key=${GOOGLE_API_KEY}`}
                 alt={business.name}
                 width={180}
