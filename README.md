@@ -2,7 +2,7 @@
 
 <img width="1440" alt="Screenshot 2023-10-14 at 2 10 46 PM" src="https://github.com/dannweeeee/foodie/assets/42776950/84136c4b-e9f4-4871-b752-4e42d0e45036">
 <br />
-
+<br />
 **Visit the Deployed Vercel Website at:** https://foodie-by-dann.vercel.app/
 
 ## Overview
