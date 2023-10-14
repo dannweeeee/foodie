@@ -24,7 +24,7 @@ function Markers ({business}) {
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
             <div className='ml-[-95px] mt-[-240px]'>
-              <BusinessItem business={business} />
+              <BusinessItem business={business} showDirection={true}/>
             </div>
           </OverlayView> 
           : null 
