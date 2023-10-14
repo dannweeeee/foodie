@@ -20,7 +20,7 @@ function HeaderNavBar() {
         </svg>
         <input type="text" placeholder="Search" className="bg-transparent outline-none w-full" />
       </div>
-      <div>
+      <div className="flex gap-5">
         {session?.user ? 
           <Image src={session.user.image} 
             alt='user' 
@@ -29,6 +29,7 @@ function HeaderNavBar() {
             className="rounded-full"
           /> : null
         } 
+        <button onClick={() => signOut()}>Sign Out</button>
       </div>
     </div>
   )

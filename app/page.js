@@ -10,6 +10,8 @@ import SelectRating from '../components/Home/SelectRating';
 import GoogleMapView from '../components/Home/GoogleMapView';
 import GlobalApi from '../shared/GlobalApi.js';
 import { UserLocationContext } from '../context/UserLocationContext.js';
+import BusinessList from '../components/Home/BusinessList';
+import SkeltonLoading from '../components/SkeletonLoading.js';
 
 export default function Home() {
   const {data:session} = useSession();
@@ -20,6 +22,7 @@ export default function Home() {
   const {userLocation, setUserLocation} = useContext(UserLocationContext);
 
   const [businessList, setBusinessList] = useState([]); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => { // will execute even when the session change
     if(!session?.user) {
@@ -32,9 +35,11 @@ export default function Home() {
   },[category, radius])
 
   const getGooglePlace = () => {
+    setLoading(true);
     GlobalApi.getGooglePlace(category, radius, userLocation.lat, userLocation.lng).then(response => {
       console.log(response.data.product.results);
       setBusinessList(response.data.product.results);
+      setLoading(false);
     })
   }
 
@@ -45,10 +50,18 @@ export default function Home() {
         <RangeSelect onRadiusChange={(value) => setRadius(value)} />
         <SelectRating />
       </div>
-      <div className="col-span-3">
-        <GoogleMapView />
+      <div className=' col-span-3'>
+          <GoogleMapView  businessList={businessList}/>
+          <div className='md:absolute mx-2 w-[90%] md:w-[74%] bottom-36 relative md:bottom-3'>
+            {!loading?  <BusinessList businessList={businessList} /> :
+            <div className='flex gap-3'>
+              {[1,2,3,4,5].map((item,index)=>(
+                <SkeltonLoading key={index} />
+              ))}
+            </div>
+            }
+        </div>
       </div>
-      <button onClick={() => signOut()}>Sign Out</button>
     </div>
   )
 }
