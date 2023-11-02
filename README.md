@@ -4,7 +4,7 @@
 
 ## Overview
 
-Foodie is a powerful Full Stack Restaurant-Finder Tool that leverages Next.js 13, Google Maps API, React, TailwindCSS, and NextAuth to help users discover and explore restaurants based on their location, providing a delightful dining experience. <br />
+Foodie is a Restaurant-Finder Tool that leverages Next.js 13, Google Maps API, React, TailwindCSS, and NextAuth to help users discover and explore restaurants based on their location. <br />
 <br />
 **Visit the Deployed Vercel Website at:** https://foodie-by-dann.vercel.app/
 
